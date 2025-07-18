@@ -1,17 +1,30 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <div v-for="pokemon in pokemons" :key="pokemon.name">
+    {{ pokemon.name }}
+  </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { chamarApi } from '@/gateways/gateway';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    
+  },
+
+  data(){
+    return{
+      pokemons: []
+    }
+  },
+
+  async mounted(){
+    this.pokemons = await chamarApi();
   }
 }
 </script>
