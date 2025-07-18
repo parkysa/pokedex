@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-      <div v-for="pokemon in pokemons" :key="pokemon.name">
-    {{ pokemon.name }}
-  </div>
+    <div v-for="pokemon in pokemons" :key="pokemon.name">
+      {{ pokemon.name }}
+    </div>
   </div>
 </template>
 
